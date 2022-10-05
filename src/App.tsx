@@ -1,29 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Suspense, lazy } from 'react'
 import './App.css'
-import { Login } from './pages/Login'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { PrivateRoutes, PublicRoutes } from '@/routes'
 import { AuthGuard } from './guards'
-import { Private } from './pages/private'
+import { RoutesWithNotFound } from './utilities'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import Logout from './components/Logout/Logout'
+
+const Login= lazy(() =>import('./pages/Login/Login'));
+const Private= lazy(() =>import('./pages/private/Private'));
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (  
     <div className="App">
+      <Suspense fallback={<>Cargando</>}>
+      <Provider store={store}>
       <BrowserRouter>
-      <Routes>
+      <Logout/>
+      <RoutesWithNotFound>
         <Route path="/" element={<Navigate to={PrivateRoutes.PRIVATE}/>}/>
-        <Route path="*" element={<>Not Found!</>}/>
         <Route path={PublicRoutes.LOGIN} element={<Login/>}/>
-        //privada
+      
         <Route element={<AuthGuard/>}>
         <Route path={`${PrivateRoutes.PRIVATE}/*`} element={<Private />}/>
         </Route>
         
-      </Routes>
+      </RoutesWithNotFound>
       </BrowserRouter>
+      </Provider>
+      </Suspense>
       </div>
   )
 }

@@ -31,3 +31,9 @@ pnpm i @types/react-redux
 Guards:es el que se va a ejecutar cada vez que se quiera ingresar a una 
 ruta privada o rutas.
 es un defensor de url de accesos que no son validos.
+
+** Lazy loading **
+- login 
+ 
+
+ Localstorage por reduxpersist
