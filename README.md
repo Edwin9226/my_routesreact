@@ -37,3 +37,5 @@ es un defensor de url de accesos que no son validos.
  
 
  Localstorage por reduxpersist
+
+ Interceptores para la carga de endpoints 
