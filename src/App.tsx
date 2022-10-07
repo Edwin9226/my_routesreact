@@ -8,7 +8,8 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import Logout from './components/Logout/Logout'
 import { Roles } from './models'
-
+import { HelloProgrammer } from './components'
+const variables = null;
 const Login= lazy(() =>import('./pages/Login/Login'));
 const Private= lazy(() =>import('./pages/private/Private'));
 
@@ -31,6 +32,8 @@ function App() {
       </BrowserRouter>
       </Provider>
       </Suspense>
+      <h1> {variables? variables: "Lupe"}</h1>
+      <HelloProgrammer name={variables}/>
       </div>
   )
 }

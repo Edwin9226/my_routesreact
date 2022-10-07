@@ -39,3 +39,30 @@ es un defensor de url de accesos que no son validos.
  Localstorage por reduxpersist
 
  Interceptores para la carga de endpoints 
+
+ JSX implementar código html en react.
+ React Virtual Dom componentes cierta lógica que va estar en el dom.
+
+ Funciones y clases ES6 JSX
+
+ cuando utilizar:
+ - Función: stales function funciones sin estado para mostrar algo en 
+ pantalla.
+
+
+  ** rangle to reactjs atomic design
+
+** eslint
+  pnpm i eslint -D  
+  eslint --init
+
+
+  Let’s take a quick look at our package.json file to see the .d.ts files included with 
+our CRA TypeScript template:
+ @testing-library/jest-dom":
+ "@testing-library/react":
+ "@testing-library/user-event":
+ "@types/jest":
+ "@types/node":
+ "@types/react":
+ "@types/react-dom"
