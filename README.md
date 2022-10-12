@@ -8,6 +8,8 @@ v6 https://reactrouter.com/en/main
 - create components
 - ES7+ React/Redux/React-Native snippets
 - Auto barrel de mike hanson
+- Prettier
+- Material Icon Theme
 
 **vitecode
 
